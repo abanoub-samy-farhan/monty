@@ -29,9 +29,8 @@ void read_f(FILE *file)
 	int line = 1;
 	char buffer[MAX_SIZE];
 
-	while (!feof(file))
+	while (fgets(buffer, MAX_SIZE, file) != NULL)
 	{
-		fgets(buffer, MAX_SIZE, file);
 		extract_line(buffer, line);
 		line++;
 	}
