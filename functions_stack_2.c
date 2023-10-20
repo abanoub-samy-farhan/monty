@@ -89,22 +89,3 @@ void div_stack(stack_t **stack, unsigned int line)
         else
                 tmp->n == 0 ? error_handle_2(2, line) : error_handle_2(1, line, "div");
 }
-
-void mul_stack(stack_t **stack, unsigned int line)
-{
-        stack_t *tmp;
-        if (!(*stack) || stack == NULL)
-        {
-                error_handle_2(1, line, "mul");
-        }
-
-        tmp = *stack;
-        if (tmp->next != NULL)
-        {
-                tmp->next->n = tmp->next->n * tmp->n;
-                (*stack) = tmp->next;
-                free(tmp);
-        }
-        else
-                error_handle_2(1, line, "mul");
-}
