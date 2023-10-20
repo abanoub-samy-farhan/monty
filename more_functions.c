@@ -9,6 +9,7 @@ void mod_stack(stack_t **stack, unsigned int line)
 		error_handle_2(1, line, "mod");
 	}
 
+	tmp = *stack;
 	if (tmp->next == NULL || tmp->n == 0)
 	{
 		tmp->n == 0 ? error_handle_2(2, line) : error_handle_2(1, line, "mod");
