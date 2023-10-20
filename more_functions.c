@@ -4,7 +4,7 @@ void mod_stack(stack_t **stack, unsigned int line)
 {
 	stack_t *tmp;
 
-	if (stack == NULL || (*stack) = NULL)
+	if (stack == NULL || (*stack) == NULL)
 	{
 		error_handle_2(1, line, "mod");
 	}
