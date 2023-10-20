@@ -33,3 +33,23 @@ void error_handle(int code, ...)
 	free_nodes();
 	exit(EXIT_FAILURE);
 }
+
+void error_handle_2(int code, ...)
+{
+	va_list argument;
+	int line;
+
+	va_start(argument, code);
+
+	switch (code)
+	{
+		case 1:
+			line = va_arg(argument, int);
+			fprintf(stderr, "L%d: can't add, stack too short\n", line);
+			break;
+		default:
+			break;
+	}
+	free_nodes();
+	exit(EXIT_FAILURE);
+}
