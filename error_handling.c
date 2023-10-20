@@ -50,6 +50,7 @@ void error_handle_2(int code, ...)
 		case 2:
 			line = va_arg(argument, int);
 			fprintf(stderr, "L%d: can't add, stack too short\n", line);
+			break;
 		default:
 			break;
 	}
