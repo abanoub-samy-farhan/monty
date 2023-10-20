@@ -66,4 +66,5 @@ void error_handle_2(int code, ...);
 void add_stack(stack_t **stack, unsigned int line);
 void sub_stack(stack_t **stack, unsigned int line);
 void div_stack(stack_t **stack, unsigned int line);
+void mul_stack(stack_t **stack, unsigned int line);
 #endif

@@ -87,6 +87,7 @@ void find_func(char *function, char *value, int line)
 		{"add", add_stack},
 		{"sub", sub_stack},
 		{"div", div_stack},
+		{"mul", mul_stack},
 		{NULL, NULL}
 	};
 
