@@ -50,3 +50,23 @@ void add_stack(stack_t **stack, unsigned int line)
 	else
 		error_handle_2(1, line);
 }
+
+void sub_stack(stack_t **stack, unsigned int line)
+{
+	stack_t *tmp;
+
+	if (!(*stack) || stack == NULL)
+	{
+		error_handle_2(2, line);
+	}
+
+	tmp = *stack;
+	if (tmp->next != NULL)
+	{
+		tmp->next->n = tmp->next->n - tmp->n;
+		(*stack) = tmp->next;
+		free(tmp);
+	}
+	else
+		error_handle_2(2, line);
+}
