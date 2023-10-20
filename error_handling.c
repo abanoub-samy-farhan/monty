@@ -38,6 +38,7 @@ void error_handle_2(int code, ...)
 {
 	va_list argument;
 	int line;
+	char *func;
 
 	va_start(argument, code);
 
@@ -45,11 +46,12 @@ void error_handle_2(int code, ...)
 	{
 		case 1:
 			line = va_arg(argument, int);
-			fprintf(stderr, "L%d: can't add, stack too short\n", line);
+			func = va_arg(argument, char *);
+			fprintf(stderr, "L%d: can't %s, stack too short\n", line, func);
 			break;
 		case 2:
 			line = va_arg(argument, int);
-			fprintf(stderr, "L%d: can't add, stack too short\n", line);
+			fprintf(stderr, "L%d: division by zero\n", line);
 			break;
 		default:
 			break;
